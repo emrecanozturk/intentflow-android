@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 WIKI_SOURCE="$ROOT_DIR/docs/wiki"
 WIKI_REMOTE="${WIKI_REMOTE:-https://github.com/emrecanozturk/intentflow-android.wiki.git}"
-WORK_DIR="${TMPDIR:-/tmp}/intentflow-android.wiki"
+WORK_DIR="$(mktemp -d "${TMPDIR:-/tmp}/intentflow-android.wiki.XXXXXX")"
 
 if [ ! -d "$WIKI_SOURCE" ]; then
   echo "Missing wiki source: $WIKI_SOURCE" >&2
@@ -21,7 +21,6 @@ EOF
   exit 1
 fi
 
-rm -rf "$WORK_DIR"
 git clone "$WIKI_REMOTE" "$WORK_DIR"
 
 rsync -a --delete --exclude ".git/" --exclude "README.md" "$WIKI_SOURCE/" "$WORK_DIR/"
