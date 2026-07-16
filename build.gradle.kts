@@ -1,4 +1,5 @@
 import org.gradle.api.tasks.testing.Test
+import org.gradle.api.tasks.compile.JavaCompile
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -21,6 +22,11 @@ subprojects {
 
         tasks.withType<Test>().configureEach {
             useJUnitPlatform()
+        }
+
+        tasks.withType<JavaCompile>().configureEach {
+            sourceCompatibility = "11"
+            targetCompatibility = "11"
         }
     }
 }
