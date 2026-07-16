@@ -17,7 +17,7 @@ Use this checklist before publishing a tag.
 ## Tag
 
 ```bash
-git tag <version>
+git tag v<version>
 git push origin main --tags
 ```
 
