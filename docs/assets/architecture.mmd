@@ -1,0 +1,10 @@
+flowchart LR
+    UI["Jetpack Compose / Android Views Adapter"] -->|Intent| Store["FlowStore"]
+    Store --> Reducer["Pure FlowReducer"]
+    Reducer -->|Next State| Store
+    Reducer -->|EffectRequest| Effects["FlowEffectHandler"]
+    Reducer -->|Route| Router["App Router"]
+    Reducer -->|Output| Parent["Parent Flow / App Shell"]
+    Effects -->|Event| Store
+    Store --> Projection["FlowProjection"]
+    Projection -->|ViewState| UI

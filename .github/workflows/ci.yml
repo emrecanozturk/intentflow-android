@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Gradle Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Test
+        run: ./gradlew test
+
+      - name: Generator Smoke Test
+        run: ./gradlew :intentflow-generator:run --args="feature SmokeFeature --mode ai --ui none --output /tmp/intentflow-smoke"
+
+      - name: Manifest Validation
+        run: ./gradlew :intentflow-generator:run --args="validate .intentflow/login.intentflow.yaml"

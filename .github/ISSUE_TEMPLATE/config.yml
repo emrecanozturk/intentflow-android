@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: GitHub Discussions
+    url: https://github.com/emrecanozturk/intentflow-android/discussions
+    about: Ask open-ended adoption questions, share workflow modeling ideas, or discuss roadmap direction.
+  - name: Community Guide
+    url: https://github.com/emrecanozturk/intentflow-android/blob/main/COMMUNITY.md
+    about: Learn when to use Discussions, Issues, Security, or the Wiki.
+  - name: Versioned Wiki
+    url: https://github.com/emrecanozturk/intentflow-android/tree/main/docs/wiki
+    about: Read the full product guide, adoption map, AI playbook, and migration notes.
+  - name: Quick Start
+    url: https://github.com/emrecanozturk/intentflow-android/blob/main/docs/adoption/quick-start.md
+    about: Start here if you want to try IntentFlow on one feature.
+  - name: Support Guide
+    url: https://github.com/emrecanozturk/intentflow-android/blob/main/SUPPORT.md
+    about: Learn which issue template or discussion format to use.

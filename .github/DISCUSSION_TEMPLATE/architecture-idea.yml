@@ -1,0 +1,28 @@
+title: "[Architecture Idea] "
+labels: ["architecture"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Architecture ideas are easiest to evaluate when they are tied to a concrete workflow. If the idea becomes actionable, we can turn it into an issue later.
+  - type: textarea
+    id: idea
+    attributes:
+      label: Idea
+      description: What should IntentFlow model differently or better?
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Example Workflow
+      description: Show the states, intents, effects, routes, or acceptance traces if possible.
+    validations:
+      required: false
+  - type: textarea
+    id: tradeoffs
+    attributes:
+      label: Tradeoffs
+      description: What does this make simpler, and what might it make heavier or less explicit?
+    validations:
+      required: false
