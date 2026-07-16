@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    kotlin("jvm") version "1.9.24" apply false
+    kotlin("jvm") version "2.4.10" apply false
     id("org.jetbrains.dokka") version "1.9.20" apply false
 }
 
